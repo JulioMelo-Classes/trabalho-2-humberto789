@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/concordo.dir/src/main.cpp.o CMakeFiles/concordo.dir/src/Servicos.cpp.o CMakeFiles/concordo.dir/src/Servidor.cpp.o CMakeFiles/concordo.dir/src/Sistema.cpp.o CMakeFiles/concordo.dir/src/Usuario.cpp.o  -o concordo 

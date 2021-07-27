@@ -1,0 +1,3 @@
+/home/runner/Trabalho-Concordo-LP1/trabalho-2-humberto789/bin/CMakeFiles/rebuild_cache.dir
+/home/runner/Trabalho-Concordo-LP1/trabalho-2-humberto789/bin/CMakeFiles/concordo.dir
+/home/runner/Trabalho-Concordo-LP1/trabalho-2-humberto789/bin/CMakeFiles/edit_cache.dir
