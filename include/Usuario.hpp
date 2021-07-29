@@ -6,6 +6,9 @@
 
 using namespace std;
 
+/*
+CP1 classe usuario ok
+*/
 class Usuario{
   private:
       int id;

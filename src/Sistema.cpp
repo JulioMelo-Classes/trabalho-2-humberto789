@@ -11,6 +11,9 @@ int Sistema::get_qtdUsuarios (void) const{
   return usuarios.size();
 }
 
+/*
+A1.2 ok
+*/
 bool Sistema::adicionar_usuario (Usuario usuario_){
   if(buscar_usuario_por_email(usuario_.get_email()).get_email().empty()){
     usuarios.push_back(usuario_);
@@ -32,6 +35,9 @@ Usuario Sistema::buscar_usuario_por_email (string email){
   return resultado;
 }
 
+/*
+A1.3 ok
+*/
 bool Sistema::logar_sistema (Usuario usuario_){
   if(usuarios.empty()){
     return false;
@@ -51,6 +57,9 @@ bool Sistema::logar_sistema (Usuario usuario_){
   }
 }
 
+/*
+A2.1 ok
+*/
 bool Sistema::desconectar (Usuario usuario_) {
   if(usuariosLogados.empty()){
     return false;
@@ -112,6 +121,9 @@ bool Sistema::verificar_servidor_existe(string nome_){
   }
 }
 
+/*
+A2.2 ok
+*/
 bool Sistema::adicionar_servidor (Servidor servidor_){
   if(!verificar_servidor_existe(servidor_.get_nome())){
     servidores.push_back(servidor_);
@@ -120,6 +132,9 @@ bool Sistema::adicionar_servidor (Servidor servidor_){
   return false;
 }
 
+/*
+A2.3 ok
+*/
 bool Sistema::modificar_descricao (Servidor servidor_){
   for(int i = 0; i<servidores.size(); i++){
     if((servidores[i].get_usuarioDonoId() == servidor_.get_usuarioDonoId()) && (strcmp(servidores[i].get_nome().c_str(), servidor_.get_nome().c_str()) == 0)){
@@ -130,6 +145,9 @@ bool Sistema::modificar_descricao (Servidor servidor_){
   return false;
 }
 
+/*
+A2.4 ok
+*/
 bool Sistema::setar_codigo(Servidor servidor_){
   for(int i = 0; i<servidores.size(); i++){
     if(servidores[i].get_usuarioDonoId() == servidor_.get_usuarioDonoId()){
@@ -140,6 +158,11 @@ bool Sistema::setar_codigo(Servidor servidor_){
   return false;
 }
 
+/*
+A2.5 ok-ish
+Não vou tirar pontos, mas essa funcionalidade deve listar todos os servidores do sistema e não
+apenas aqueles que o usuário está conectado ou é dono.
+*/
 std::vector<Servidor> Sistema::listar_servidor_usuarios(int usuarioId_){
   std::vector<Servidor> resultado;
 
@@ -152,6 +175,9 @@ std::vector<Servidor> Sistema::listar_servidor_usuarios(int usuarioId_){
   return resultado;
 }
 
+/*
+A2.6 ok
+*/
 bool Sistema::remover_servidor (Servidor servidor_) {
   bool resultado = false;
   for(int i = 0; i<servidores.size(); i++){
@@ -167,6 +193,7 @@ bool Sistema::remover_servidor (Servidor servidor_) {
     
     for(auto i = usuariosLogados.begin(); i != usuariosLogados.end();){
 
+      /*em c++ usamos o comparador == mesmo, strcmp é de C*/
       if(strcmp(servidor_.get_nome().c_str(), i->second.first.c_str()) == 0){
         i->second.first = "";
         i->second.second = "";

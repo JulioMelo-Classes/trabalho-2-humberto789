@@ -7,6 +7,9 @@
 
 using namespace std;
 
+/*
+CP1 classe CanalTexto ok!
+*/
 class CanalTexto{
   private:
       string nome;

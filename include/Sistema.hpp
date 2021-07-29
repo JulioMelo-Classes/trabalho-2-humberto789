@@ -9,6 +9,11 @@
 
 using namespace std;
 
+/*
+A classe sistema não precisava ser reescrita, mas do modo como vc
+fez está ok. Você pode mudar os parâmetros de alguns métodos para organizar
+melhor o main
+*/
 class Sistema{
   private:
     std::vector< Usuario > usuarios;

@@ -12,6 +12,18 @@
 
 using namespace std;
 
+
+/*
+Como você escolheu não usar as classes premade que foram sugeridas
+tente modularizar o processamento dos comandos de forma que o main
+não precise criar instâncias das classes Usuário e Servidor, vc pode mudar
+as assinaturas dos métodos em Sistema para receber diretamente
+os parâmetros.
+Ex:
+sistema::adicionar_usuario deve receber os principais parametros
+para criar um usuário que são o dadosComando[1] e dadosComando[2]. Internamente
+a classe sistema deve controlar o incremento dos ids.
+*/
 int main( int argc, char *argv[] ){
 
   Sistema sistema;
