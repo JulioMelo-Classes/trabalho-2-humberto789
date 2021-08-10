@@ -17,7 +17,7 @@ No mesmo diretório do projeto, crie uma pasta de sua preferência, após isso, 
 
 Após isso seu programa estará compilado e pronto para uso, basta usar o seguinte comando com o terminal aberto na pasta que você criou anteriormente:
 
-- `./concordo "nome do arquivo de apostas".txt`
+- `./concordo`
 
 ## Testes pré-definidos
 Para usar um os testes, use o seguinde comando:
