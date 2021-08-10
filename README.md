@@ -21,7 +21,7 @@ Após isso seu programa estará compilado e pronto para uso, basta usar o seguin
 
 ## Testes pré-definidos
 Para usar um os testes, use o seguinde comando:
-`./concordo "nome do teste.txt"`
+`./concordo < "nome do teste.txt"`
 
 ### Descrição dos testes
 - a1_ate_a3: Executa os testes das funcionalidades A1 até A1.3
