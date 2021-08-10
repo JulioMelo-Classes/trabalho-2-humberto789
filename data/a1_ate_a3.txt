@@ -1,0 +1,7 @@
+create-user teste@teste.com 123 Fulano
+create-user teste@teste.com 123 Fulano
+login teste@teste.com 1234
+login teste 1234
+login teste@teste.com 123
+quit
+create-user naodeveprocessar@imd.ufrn.br naodevechegaraqui Não deve chegar aqui

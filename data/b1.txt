@@ -1,0 +1,16 @@
+create-user teste@teste.com 123 Fulano
+create-user email@email.com 321 Goku
+login teste@teste.com 123
+login email@email.com 321
+create-server 0 servidor-teste
+enter-server 0 servidor-teste
+create-channel 0 bate-papo
+create-channel 0 bate-papo
+create-channel 1 bate-papo-2
+list-channels 0
+list-channels 1
+enter-channel 0 bate-papo-2
+enter-channel 0 bate-papo
+leave-channel 1 bate-papo
+leave-channel 0 bate-papo
+quit

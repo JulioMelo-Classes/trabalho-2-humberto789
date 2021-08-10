@@ -1,0 +1,16 @@
+create-user teste@teste.com 123 Fulano
+create-user email@email.com 321 Goku
+login teste@teste.com 123
+login email@email.com 321
+create-server 0 servidor-teste
+enter-server 0 servidor-teste
+set-server-invite-code 0 servidor-teste 123
+enter-server 1 servidor-teste
+enter-server 0 servidor-teste
+enter-server 1 servidor-teste 123
+list-participants 0
+leave-server 0 servidor-teste
+list-participants 1
+list-servers 0
+quit
+list-participants 1
