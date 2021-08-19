@@ -6,7 +6,9 @@
 #include "Usuario.hpp"
 
 using namespace std;
-
+/*
+nesta classe uma boa seria transformar os métodos em static, ou melhor ainda só usar um namespace ao invés de uma classe!
+*/
 class Servicos{
   private:
 

@@ -1,4 +1,5 @@
 # Concordo: Clone do Discord, para humanos mais civilizados.
+<!--blz, bom trabalho com a documentação dos testes! 100%-->
  Repositório contendo as especificações do Trabalho 2 da disciplina de LP1
 
 ## Documentação

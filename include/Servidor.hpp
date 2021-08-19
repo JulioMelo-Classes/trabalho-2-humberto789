@@ -8,9 +8,14 @@
 
 using namespace std;
 
+/*
+CP2 ok
+
+Documentação 0.8, faltou documentar os atributos
+*/
 class Servidor{
   private:
-      int usuarioDonoId;
+      int usuarioDonoId; //<! documentação restante!
       string nome;
       string descricao;
       string codigoConvite;

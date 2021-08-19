@@ -23,8 +23,13 @@ int main( int argc, char *argv[] ){
     
     std::getline(std::cin, comando);
 
+    if(comando[0] == '#' || comando.size() == 0){ //debug apenas
+      cout<<comando<<endl;
+      continue;
+    }
+    
     vector<string> dadosComando = servicos.separador_linha_comando(comando);
-
+    
     // Etapa: Fim do programa
     if(comando == "quit"){
       cout << "Saindo do Concordo" << endl;
@@ -170,12 +175,12 @@ int main( int argc, char *argv[] ){
           if(sistema.verificar_usuario_logado(usuarioDono)){
             if(sistema.verificar_servidor_existe(servidorDescricao.get_nome())){
               if(sistema.modificar_descricao(servidorDescricao)){
-                cout << "Descrição do servidor ‘" << servidorDescricao.get_nome() << "’ modificada!" << endl;
+                cout << "Descrição do servidor '" << servidorDescricao.get_nome() << "' modificada!" << endl;
               }else{
                 cout << "Você não pode alterar a descrição de um servidor que não foi criado por você" << endl;
               }
             }else {
-              cout << "Servidor ‘" << servidorDescricao.get_nome() <<"’ não existe" << endl;
+              cout << "Servidor '" << servidorDescricao.get_nome() <<"' não existe" << endl;
             }
           }else{
             cout << "Não está conectado" << endl;
@@ -214,15 +219,15 @@ int main( int argc, char *argv[] ){
             if(sistema.verificar_servidor_existe(servidorCodigo.get_nome())){
               if(sistema.setar_codigo(servidorCodigo)){
                 if(servidorCodigo.get_codigoConvite()==""){
-                  cout << "Código de convite do servidor ‘" << servidorCodigo.get_nome() << "’ removido!" << endl;
+                  cout << "Código de convite do servidor '" << servidorCodigo.get_nome() << "' removido!" << endl;
                 }else {
-                  cout << "Código de convite do servidor ‘" << servidorCodigo.get_nome() << "’ modificado!" << endl;
+                  cout << "Código de convite do servidor '" << servidorCodigo.get_nome() << "' modificado!" << endl;
                 }
               }else{
                 cout << "Você não pode alterar o codigo de convite de um servidor que não foi criado por você" << endl;
               }
             }else {
-              cout << "Servidor ‘" << servidorCodigo.get_nome() <<"’ não existe" << endl;
+              cout << "Servidor '" << servidorCodigo.get_nome() <<"' não existe" << endl;
             }
           }else{
             cout << "Não está conectado" << endl;
@@ -285,12 +290,12 @@ int main( int argc, char *argv[] ){
           if(sistema.verificar_usuario_logado(usuarioDono)){
             if(sistema.verificar_servidor_existe(servidorRemovido.get_nome())){
               if(sistema.remover_servidor(servidorRemovido)){
-                cout << "Servidor ‘" << servidorRemovido.get_nome() << "’ removido" << endl;
+                cout << "Servidor '" << servidorRemovido.get_nome() << "' removido" << endl;
               }else{
-                cout << "Você não é o dono do servidor ‘" << servidorRemovido.get_nome() << "’" << endl;
+                cout << "Você não é o dono do servidor '" << servidorRemovido.get_nome() << "'" << endl;
               }
             }else {
-              cout << "Servidor ‘" << servidorRemovido.get_nome() <<"’ não existe" << endl;
+              cout << "Servidor '" << servidorRemovido.get_nome() <<"' não existe" << endl;
             }
           }else{
             cout << "Você não está conectado" << endl;
@@ -334,7 +339,7 @@ int main( int argc, char *argv[] ){
                 cout << "Servidor requer código de convite" << endl;
               }
             }else {
-              cout << "Servidor ‘" << servidor.get_nome() <<"’ não existe" << endl;
+              cout << "Servidor '" << servidor.get_nome() <<"' não existe" << endl;
             }
           }else{
             cout << "Você não está conectado" << endl;
@@ -367,12 +372,12 @@ int main( int argc, char *argv[] ){
             if(sistema.verificar_servidor_existe(servidor.get_nome())){
               if(sistema.sair_servidor(idUsuario, servidor)){
 
-                cout << "Saindo do servidor ‘"<< servidor.get_nome() << "’" << endl;
+                cout << "Saindo do servidor '"<< servidor.get_nome() << "'" << endl;
               }else{
                 cout << "Você não está conectado nesse servidor" << endl;
               }
             }else {
-              cout << "Servidor ‘" << servidor.get_nome() <<"’ não existe" << endl;
+              cout << "Servidor '" << servidor.get_nome() <<"' não existe" << endl;
             }
           }else{
             cout << "Você não está conectado" << endl;
@@ -459,9 +464,9 @@ int main( int argc, char *argv[] ){
             if(!servidor.get_nome().empty()){
 
               if(sistema.criar_canal_texto(idUsuario, dadosComando[2])){
-                cout << "Canal de texto ‘" << dadosComando[2] <<"’ criado" << endl;
+                cout << "Canal de texto '" << dadosComando[2] <<"' criado" << endl;
               }else{
-                cout << "Canal de texto ‘" << dadosComando[2] <<"’ já existe" << endl;
+                cout << "Canal de texto '" << dadosComando[2] <<"' já existe" << endl;
               }
 
             }else{
@@ -498,9 +503,9 @@ int main( int argc, char *argv[] ){
             if(!servidor.get_nome().empty()){
 
               if(sistema.entrar_canal_texto(idUsuario, dadosComando[2])){
-                cout << "Entrou no canal ‘" << dadosComando[2] <<"’" << endl;
+                cout << "Entrou no canal '" << dadosComando[2] <<"'" << endl;
               }else{
-                cout << "Canal ‘" << dadosComando[2] <<"’ não existe" << endl;
+                cout << "Canal '" << dadosComando[2] <<"' não existe" << endl;
               }
 
             }else{

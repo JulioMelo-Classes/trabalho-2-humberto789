@@ -6,6 +6,11 @@
 
 using namespace std;
 
+/*
+CP2 ok
+
+Documentação 0.8, faltou documentar os atributos
+*/
 class Mensagem{
   private:
       string dataHora;

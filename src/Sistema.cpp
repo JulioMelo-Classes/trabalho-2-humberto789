@@ -144,7 +144,8 @@ bool Sistema::modificar_descricao (Servidor servidor_){
 
 bool Sistema::setar_codigo(Servidor servidor_){
   for(int i = 0; i<servidores.size(); i++){
-    if(servidores[i].get_usuarioDonoId() == servidor_.get_usuarioDonoId()){
+    //aqui, como vc não compara o nome do servidor acaba que vc muda as senhas de todos os servidores daquele usuário!
+    if(servidores[i].get_usuarioDonoId() == servidor_.get_usuarioDonoId()){ 
       servidores[i].set_codigoConvite(servidor_.get_codigoConvite());
       return true;
     }
@@ -189,15 +190,17 @@ bool Sistema::remover_servidor (Servidor servidor_) {
 
   return resultado;
 }
-
+/*
+A2.7 ok
+*/
 bool Sistema::entrar_servidor (int idUsuario_, Servidor servidor_) {
 
   bool resultado = false;
 
   for(int i = 0; i<servidores.size(); i++){
     if(servidores[i].get_nome() == servidor_.get_nome()){
-
       if((idUsuario_ == servidores[i].get_usuarioDonoId()) || servidor_.get_codigoConvite() == servidores[i].get_codigoConvite()){
+        
         if(servidores[i].adicionar_participante(idUsuario_) || servidores[i].verificar_participante_existe(idUsuario_)){
 
           for(auto j = usuariosLogados.begin(); j != usuariosLogados.end();){
@@ -218,6 +221,9 @@ bool Sistema::entrar_servidor (int idUsuario_, Servidor servidor_) {
   return resultado;
 }
 
+/*
+A2.8 ok!
+*/
 bool Sistema::sair_servidor(int idUsuario_, Servidor servidor_){
   for(int i = 0; i<servidores.size(); i++){
     if(servidores[i].get_nome() == servidor_.get_nome()){
@@ -242,6 +248,10 @@ bool Sistema::sair_servidor(int idUsuario_, Servidor servidor_){
   return false;
 }
 
+/*
+A2.9 0,9
+Acaba que quando não tem ninguem no servidor você não exibe qualquer coisa, vou tirar 10% por isso+
+*/
 void  Sistema::listar_usuarios_no_servidor (int idUsuario_) {
 
   string nomeServidor;
@@ -264,6 +274,10 @@ void  Sistema::listar_usuarios_no_servidor (int idUsuario_) {
   }
 }
 
+/*
+B1.1 0,9
+Quando não há canais nada é exibido, vou tirar 10% por isso
+*/
 void Sistema::listar_canais_no_servidor (int idUsuario_){
   string nomeServidor;
 
@@ -306,6 +320,9 @@ Servidor Sistema::recuperar_servidor_visualizado(int idUsuario_){
   return servidorVisualizado;
 }
 
+/*
+B1.2 ok
+*/
 bool Sistema::criar_canal_texto(int idUsuario_, string nomeCanal_){
   
   Servidor servidorVisualizado = recuperar_servidor_visualizado(idUsuario_);
@@ -330,6 +347,9 @@ bool Sistema::criar_canal_texto(int idUsuario_, string nomeCanal_){
   return false;
 }
 
+/*
+B1.3 ok
+*/
 bool Sistema::entrar_canal_texto(int idUsuario_, string nomeCanal_){
 
   Servidor servidorVisualizado = recuperar_servidor_visualizado(idUsuario_);
@@ -360,6 +380,9 @@ bool Sistema::entrar_canal_texto(int idUsuario_, string nomeCanal_){
   return false;
 }
 
+/*
+B1.4 ok
+*/
 bool Sistema::sair_canal_texto(int idUsuario_){
   Servidor servidorVisualizado = recuperar_servidor_visualizado(idUsuario_);
 
@@ -383,6 +406,9 @@ bool Sistema::sair_canal_texto(int idUsuario_){
   return false;
 }
 
+/*
+B2.1 ok
+*/
 bool Sistema::enviar_mensagem(int idUsuario_, string mensagem_){
 
   Servidor servidorVisualizado = recuperar_servidor_visualizado(idUsuario_);
@@ -416,6 +442,9 @@ bool Sistema::enviar_mensagem(int idUsuario_, string mensagem_){
   return false;
 }
 
+/*
+B2.2 ok
+*/
 bool Sistema::listar_mensagens(int idUsuario_){
 
   Servidor servidorVisualizado = recuperar_servidor_visualizado(idUsuario_);
